@@ -13,7 +13,9 @@ Backend
 
 DB design
 
-<img width="927" alt="db_design" src="https://github.com/atul-vasudevan/Tax-Calculator/assets/49674735/c4ae60e1-6ef8-4af4-a2b7-2f87bd293bf9">
+<img width="979" alt="db_design" src="https://github.com/atul-vasudevan/Tax-Calculator/assets/49674735/6ce1789e-a264-44f4-b5d4-1e173f29395b">
+
+
 
 
 
