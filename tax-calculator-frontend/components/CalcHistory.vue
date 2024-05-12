@@ -11,6 +11,7 @@
             <th>Tax</th>
             <th>Net</th>
             <th>Net + Superannuation</th>
+            <th>Year</th>
             <th>Delete</th>
           </tr>
         </thead>
@@ -22,6 +23,7 @@
             <td>{{ calculation.calculated_value.tax_amount }}</td>
             <td>{{ calculation.calculated_value.income_after_tax }}</td>
             <td>{{ calculation.calculated_value.income_after_tax_super }}</td>
+            <td>{{ calculation.year }}</td>
             <td class="delete-button">
               <button @click="deleteEntry(index)">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
