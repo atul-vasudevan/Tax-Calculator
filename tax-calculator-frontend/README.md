@@ -1,4 +1,4 @@
-# tax-calculator
+# tax-calculator-frontend
 
 ## Build Setup
 
@@ -9,61 +9,23 @@ $ npm install
 # serve with hot reload at localhost:3000
 $ npm run dev
 
-# build for production and launch server
-$ npm run build
-$ npm run start
-
-# generate static project
-$ npm run generate
 ```
+## Application start
+<img width="752" alt="starter_page" src="https://github.com/atul-vasudevan/Tax-Calculator/assets/49674735/b7c12ac3-9ca0-4560-b0bc-88389a496573">
 
-For detailed explanation on how things work, check out the [documentation](https://nuxtjs.org).
+## Registration page
+<img width="442" alt="registration" src="https://github.com/atul-vasudevan/Tax-Calculator/assets/49674735/b741e544-5b9e-415d-9c72-b2a070dc6e63">
 
-## Special Directories
+## Login page
+<img width="538" alt="login" src="https://github.com/atul-vasudevan/Tax-Calculator/assets/49674735/211596af-8ed5-4cdb-81db-df38e44468ad">
 
-You can create the following extra directories, some of which have special behaviors. Only `pages` is required; you can delete them if you don't want to use their functionality.
+## Tax calculation
+<img width="654" alt="calculations" src="https://github.com/atul-vasudevan/Tax-Calculator/assets/49674735/03ede7d6-7310-40b8-aadf-9d1f410544b5">
 
-### `assets`
-
-The assets directory contains your uncompiled assets such as Stylus or Sass files, images, or fonts.
-
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/assets).
-
-### `components`
-
-The components directory contains your Vue.js components. Components make up the different parts of your page and can be reused and imported into your pages, layouts and even other components.
-
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/components).
-
-### `layouts`
-
-Layouts are a great help when you want to change the look and feel of your Nuxt app, whether you want to include a sidebar or have distinct layouts for mobile and desktop.
-
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/layouts).
+## Calculation history
+<img width="1111" alt="calc_history" src="https://github.com/atul-vasudevan/Tax-Calculator/assets/49674735/ed7ef953-52c8-4ca2-95ee-a30cdbee28dc">
 
 
-### `pages`
 
-This directory contains your application views and routes. Nuxt will read all the `*.vue` files inside this directory and setup Vue Router automatically.
 
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/get-started/routing).
 
-### `plugins`
-
-The plugins directory contains JavaScript plugins that you want to run before instantiating the root Vue.js Application. This is the place to add Vue plugins and to inject functions or constants. Every time you need to use `Vue.use()`, you should create a file in `plugins/` and add its path to plugins in `nuxt.config.js`.
-
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/plugins).
-
-### `static`
-
-This directory contains your static files. Each file inside this directory is mapped to `/`.
-
-Example: `/static/robots.txt` is mapped as `/robots.txt`.
-
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/static).
-
-### `store`
-
-This directory contains your Vuex store files. Creating a file in this directory automatically activates Vuex.
-
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/store).
