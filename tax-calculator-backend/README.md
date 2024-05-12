@@ -10,12 +10,14 @@ $ npm install
 # development
 $ npm run start
 $ npm run start:dev
+```
 
 ## Test
 
 ```bash
 # unit tests
 $ npm run test
+```
 
 ```bash
 # migrations
