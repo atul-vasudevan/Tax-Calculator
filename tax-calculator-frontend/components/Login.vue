@@ -6,7 +6,7 @@
         <input type="text" id="username" v-model="username" required placeholder="Enter your username">
       </div>
       <div style="margin-top: 10px;">
-        <button class="btn btn-primary" type="submit">Login</button>
+        <button class="btn btn-primary d-block" type="submit" :disabled="!username">Login</button>
       </div>
     </form>
   </div>

@@ -9,7 +9,7 @@ export class CalculationHistory {
     @ManyToOne(() => User, user => user.calculation_history)
     user: User;
 
-    @Column()
+    @Column({ type: 'decimal', precision: 10, scale: 2 })
     super: number;
 
     @Column()

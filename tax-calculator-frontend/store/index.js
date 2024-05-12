@@ -56,11 +56,21 @@ export const createStore = () => {
           console.error('Error calculating:', error);
         }
       },
+      async deleteSelectedCalcHistory({ commit }, idToDelete) {
+        console.log("del", idToDelete)
+        try {
+          const response = await axios.delete('http://localhost:3001/v1/calculate/' + idToDelete);
+          console.log('Calc delete:', response.data);
+        } catch (error) {
+          console.error('Error deleting:', error);
+        }
+      },
       async getCalcHistoryOfUser({ commit }) {
         console.log("calchistory")
         try {
           const response = await axios.get('http://localhost:3001/v1/calculate/user/' + this.state.userId);
           console.log('calc history: ', response.data);
+          commit('ADD_CALCULATION', response.data);
           return response.data;
         } catch (error) {
           console.error('Error fetching calculation history:', error);
