@@ -6,6 +6,7 @@ import { CalculateDto } from './dto/create-calculator.dto';
 export class CalculatorController {
   constructor(private readonly calculatorService: CalculatorService) {}
 
+  //This endpoint will be used to perform the tax calculations given the user input
   @Post('user/:id')
   async calculate(@Param('id') id: number ,@Body() calculateDto: CalculateDto) {
     return this.calculatorService.calculateTax(calculateDto, id);

@@ -22,6 +22,8 @@ export class CalculatorService {
     if (!user) {
       throw new Error('User not found');
     }
+    // In this service function we will make a call to an external service to get the tax rates given a year.
+    // For the purpose of this project I have taken stardard constant values.
     let gross = 0;
     let superannuation = 0;
     const income = calculateDto.income;
@@ -54,6 +56,7 @@ export class CalculatorService {
     calculationHistory.income = calculateDto.income;
     calculationHistory.super_included = calculateDto.super_included;
     calculationHistory.user = user;
+    calculationHistory.year = calculateDto.year;
     calculationHistory.created = new Date();
     calculationHistory.calculated_value = {
       "gross": gross,

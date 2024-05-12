@@ -22,4 +22,8 @@ import {
     super_included: boolean;
 
     user: number;
+
+    @IsNumber()
+    @IsPositive()
+    year: number;
   }

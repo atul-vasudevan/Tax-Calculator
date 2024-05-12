@@ -23,4 +23,7 @@ export class CalculationHistory {
 
     @Column({ type: 'timestamp', default: () => 'CURRENT_TIMESTAMP' })
     created: Date;
+
+    @Column({ default: 2022 })
+    year: number;
 }
