@@ -20,10 +20,11 @@ $ npm run dev
 <img width="538" alt="login" src="https://github.com/atul-vasudevan/Tax-Calculator/assets/49674735/211596af-8ed5-4cdb-81db-df38e44468ad">
 
 ## Tax calculation
-<img width="654" alt="calculations" src="https://github.com/atul-vasudevan/Tax-Calculator/assets/49674735/03ede7d6-7310-40b8-aadf-9d1f410544b5">
+<img width="548" alt="calculations" src="https://github.com/atul-vasudevan/Tax-Calculator/assets/49674735/3e11a507-5a0e-4bc7-9fc0-6cf377169a97">
 
 ## Calculation history
-<img width="1111" alt="calc_history" src="https://github.com/atul-vasudevan/Tax-Calculator/assets/49674735/ed7ef953-52c8-4ca2-95ee-a30cdbee28dc">
+<img width="1057" alt="calc_history" src="https://github.com/atul-vasudevan/Tax-Calculator/assets/49674735/c80fd2e7-2169-41c6-abb3-20acc827afcb">
+
 
 
 
