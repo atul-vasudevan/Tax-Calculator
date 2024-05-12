@@ -15,6 +15,12 @@
             <span class="error d-block">{{ errors[0] }}</span>
           </ValidationProvider>
         </div>
+        <div class="custom-height">
+          <ValidationProvider name="year" rules="required|numeric" v-slot="{ errors }">
+            <input type="text" id="year" v-model="year" placeholder="Year">
+            <span class="error d-block">{{ errors[0] }}</span>
+          </ValidationProvider>
+        </div>
         <div>
           <label for="includeSuper">Does the income include superannuation?</label>
           <input type="checkbox" id="includeSuper" v-model="includeSuper">
@@ -37,6 +43,7 @@ export default {
       superannuation: null,
       income: null,
       includeSuper: false,
+      year: null
     };
   },
   computed: {
@@ -47,7 +54,7 @@ export default {
   methods: {
     submitDetails() {
       console.log("submit in calc")
-      this.$emit('incomeDetails', { superannuation: this.superannuation, income: this.income, super_included: this.includeSuper });
+      this.$emit('incomeDetails', { superannuation: this.superannuation, income: this.income, super_included: this.includeSuper, year: this.year });
     },
     viewHistory() {
       this.$emit('viewHistory');
