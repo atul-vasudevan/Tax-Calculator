@@ -5,7 +5,7 @@ import { InjectRepository } from '@nestjs/typeorm';
 import { CalculationHistory } from './entities/calculator.entity';
 import { User } from 'src/user/entities/user.entity';
 import { UserService } from 'src/user/user.service';
-import { Repository } from 'typeorm';
+import { Repository, DeleteResult } from 'typeorm';
 
 @Injectable()
 export class CalculatorService {
@@ -58,7 +58,7 @@ export class CalculatorService {
     calculationHistory.calculated_value = {
       "gross": gross,
       "superannuation": superannuation,
-      "tax_amount": taxAmount,
+      "tax_amount": taxAmount.toFixed(2),
       "income_after_tax": netIncome,
       "income_after_tax_super": netIncome + superannuation,
     }
@@ -69,5 +69,9 @@ export class CalculatorService {
   async fetchAll(id: number): Promise<CalculationHistory[]> {
     const user = await this.userService.findById(id);
     return await this.calculateHistory.find({ where: { user: user } });
+  }
+
+  async deleteCalcEntry(id: number): Promise<DeleteResult> {
+    return await this.calculateHistory.delete(id);
   }
 }

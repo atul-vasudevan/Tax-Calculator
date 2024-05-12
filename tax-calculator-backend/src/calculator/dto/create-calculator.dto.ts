@@ -2,7 +2,8 @@ import {
     IsNotEmpty,
     IsNumber,
     IsPositive,
-    IsBoolean
+    IsBoolean,
+    IsNumberString
   } from 'class-validator';
   
   export class CalculateDto {
