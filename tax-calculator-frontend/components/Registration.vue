@@ -28,7 +28,8 @@ export default {
   },
   methods: {
     register() {
-      this.$emit('register', { username: this.username, firstName: this.firstName, lastName: this.lastName });
+      console.log("register ")
+      this.$emit('registerUser', { username: this.username, first_name: this.firstName, last_name: this.lastName });
     },
   },
 };

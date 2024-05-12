@@ -17,9 +17,9 @@
       </div>
     </div>
   </div>
-  <div v-else>
-    <calculator @incomeDetails="incomeDetails"/>
-    <calc-history :calculationHistory="calculationHistory"/>
+  <div v-else class="calculator-container">
+    <calculator v-if="!showCalcHistory" @incomeDetails="incomeDetails" @viewHistory="viewHistory" class="calculator"/>
+    <calc-history v-if="showCalcHistory" :calculationHistory="calculationHistory" @deleteEntry="deleteEntry"/>
   </div>
 </template>
 
@@ -28,7 +28,6 @@ import RegistrationForm from '../components/Registration.vue';
 import LoginForm from '../components/Login.vue';
 import Calculator from '../components/Calculator.vue';
 import CalcHistory from '../components/CalcHistory.vue';
-//   import { mapActions } from 'vuex';
   
   export default {
     components: {
@@ -41,57 +40,71 @@ import CalcHistory from '../components/CalcHistory.vue';
       return {
         isRegister: true,
         calculationHistory: [],
-        showForm: false
+        showForm: false,
+        showCalcHistory: false,
       };
     },
     computed: {
       isLoggedIn() {
         return this.$store.state.isLoggedIn;
-      }
+      },
     },
     methods: {
-        // ...mapActions(['registerUser', 'loginUser']),
-        showRegistrationForm() {
-            this.isRegister = true;
-            this.showForm = true;
-        },
-        showLoginForm() {
-            this.isRegister = false;
-            this.showForm = true;
-        },
-        registerUser(userData) {
-          console.log("register in auth", userData)
-            // Dispatch the 'registerUser' action defined in the Vuex store
-            this.$store.dispatch('registerUser', userData);
-        },
-        async loginUser(username) {
-          console.log("login in auth")
-          try {
-            await this.$store.dispatch('userlogin', username);
-            this.fetchCalcHistory();
-            // Handle successful login
-          } catch (error) {
-            // Handle login error
-            console.error('Login error:', error);
-          }
-        },
-        async incomeDetails(income) {
-          console.log("submit in auth", income)
-          try {
-            await this.$store.dispatch('submitIncomeDetails', income);
-            // Handle successful login
-          } catch (error) {
-            // Handle login error
-            console.error('Calculation error:', error);
-          }
-        },
-        async fetchCalcHistory() {
-          try {
-            this.calculationHistory = await this.$store.dispatch('getCalcHistoryOfUser');
-          } catch (error) {
-            console.error('Calculation history error:', error);
-          }
+
+      viewHistory() {
+        this.showCalcHistory = true;
+        if (this.calculationHistory.length === 0) {
+          this.fetchCalcHistory();
         }
+      },
+      showRegistrationForm() {
+          this.isRegister = true;
+          this.showForm = true;
+      },
+      showLoginForm() {
+          this.isRegister = false;
+          this.showForm = true;
+      },
+      registerUser(userData) {
+        console.log("register in auth", userData)
+        this.$store.dispatch('registerUser', userData);
+      },
+      async loginUser(username) {
+        console.log("login in auth")
+        try {
+          await this.$store.dispatch('userlogin', username);
+          // this.fetchCalcHistory();
+        } catch (error) {
+          console.error('Login error:', error);
+        }
+      },
+      async incomeDetails(income) {
+        console.log("submit in auth", income)
+        try {
+          await this.$store.dispatch('submitIncomeDetails', income);
+          this.showCalcHistory = true;
+          if (this.calculationHistory.length === 0) {
+            this.fetchCalcHistory();
+          }
+        } catch (error) {
+          console.error('Calculation error:', error);
+        }
+      },
+      async fetchCalcHistory() {
+        try {
+          this.calculationHistory = await this.$store.dispatch('getCalcHistoryOfUser');
+        } catch (error) {
+          console.error('Calculation history error:', error);
+        }
+      },
+      async deleteEntry(idToDelete) {
+        try {
+          console.log("val in auth ", idToDelete)
+          await this.$store.dispatch('deleteSelectedCalcHistory', idToDelete);
+        } catch (error) {
+          console.error('Calculation history error:', error);
+        }
+      }
 
     },
   };
@@ -117,5 +130,8 @@ import CalcHistory from '../components/CalcHistory.vue';
   .button-container button {
     margin-top: 0%;
   }
+  .calculator{
+  width: 48%; /* Adjust width as needed, leaving some space for margins */
+}
   </style>
   
